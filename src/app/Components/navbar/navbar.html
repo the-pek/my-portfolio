@@ -1,0 +1,41 @@
+<div class="flex h-full flex-none">
+  <!-- Barre d'activité -->
+  <nav class="hidden w-[52px] flex-none flex-col items-center gap-1 border-r border-edge bg-chrome py-2.5 lg:flex" aria-label="Activité">
+    <button type="button" class="grid h-10 w-10 place-items-center border-l-2 border-l-accent text-ink" title="Explorateur">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 5h7l2 2h9v12H3z" /></svg>
+    </button>
+    <button type="button" class="grid h-10 w-10 place-items-center border-l-2 border-l-transparent text-faint transition-colors hover:text-muted" title="Recherche">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="7" /><line x1="21" y1="21" x2="16.5" y2="16.5" /></svg>
+    </button>
+    <button type="button" class="grid h-10 w-10 place-items-center border-l-2 border-l-transparent text-faint transition-colors hover:text-muted" title="Contrôle de version">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="6" cy="6" r="2.5" /><circle cx="6" cy="18" r="2.5" /><circle cx="18" cy="9" r="2.5" /><path d="M6 8.5v7M8.4 7.2 15.6 8.2M18 11.5c0 4-6 2.5-6 6" /></svg>
+    </button>
+    <span class="flex-1"></span>
+    <span class="grid h-[30px] w-[30px] place-items-center rounded-full bg-gradient-to-br from-accent to-cy font-display text-sm font-bold text-[#03060c]">PEK</span>
+  </nav>
+
+  <!-- Explorateur (tiroir en mobile, fixe en lg) -->
+  <aside
+    class="absolute inset-y-0 left-0 z-30 w-[248px] flex-none -translate-x-full overflow-auto border-r border-edge bg-chrome py-2.5 transition-transform duration-200 lg:relative lg:translate-x-0"
+    [class.translate-x-0]="ui.menuOpen()">
+    <p class="px-4 py-1.5 font-mono text-[11px] uppercase tracking-[0.12em] text-faint">Explorateur</p>
+
+    <div class="font-mono text-[13px]">
+      <div class="flex items-center gap-2 px-4 py-1 text-muted"><span class="text-faint">▾</span> PORTFOLIO</div>
+      <div class="flex items-center gap-2 py-1 pl-[30px] text-muted"><span class="text-faint">▾</span> src</div>
+      <div class="flex items-center gap-2 py-1 pl-[46px] text-muted"><span class="text-faint">▾</span> pages</div>
+
+      @for (f of files; track f.path) {
+        <a
+          [routerLink]="f.path"
+          routerLinkActive="bg-panel2 text-ink border-l-accent"
+          (click)="ui.close()"
+          class="flex items-center gap-2 border-l-2 border-l-transparent py-1 pl-[62px] pr-4 text-muted transition-colors hover:bg-panel hover:text-ink">
+          <span class="text-[11px] font-semibold text-kw">TS</span>{{ f.name }}
+        </a>
+      }
+
+      <div class="mt-0.5 flex items-center gap-2 py-1 pl-[46px] text-muted"><span class="text-[11px] font-semibold text-num">MD</span> README.md</div>
+    </div>
+  </aside>
+</div>
