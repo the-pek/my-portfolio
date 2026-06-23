@@ -1,3 +1,32 @@
-/* You can add global styles to this file, and also import other style files */
+@import "tailwindcss";
 
-@import 'tailwindcss';
+@theme {
+  --color-bg: #0e1117;
+  --color-chrome: #0a0d13;
+  --color-panel: #151a23;
+  --color-panel2: #1b212d;
+  --color-edge: #222a36;
+  --color-edge2: #2c3543;
+
+  --color-ink: #e6edf3;
+  --color-muted: #8b949e;
+  --color-faint: #5a6473;
+
+  --color-accent: #4d9fff;
+  --color-accent2: #79c0ff;
+
+  /* couleurs "syntaxe" */
+  --color-kw: #6cb6ff;
+  --color-str: #7ee787;
+  --color-num: #ffa657;
+  --color-cy: #56d4dd;
+  --color-ok: #3fb950;
+
+  --font-display: "Space Grotesk", system-ui, sans-serif;
+  --font-body: "Inter", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+}
+
+html, body { height: 100%; }
+body { background: var(--color-chrome); color: var(--color-ink); font-family: var(--font-body); -webkit-font-smoothing: antialiased; }
+::selection { background: var(--color-accent); color: #03060c; }

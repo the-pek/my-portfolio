@@ -1,0 +1,29 @@
+<div class="flex h-screen flex-col overflow-hidden bg-bg text-ink">
+  <app-header/>
+
+  <div class="relative flex min-h-0 flex-1">
+    <app-navbar />
+
+    <section class="relative flex min-w-0 flex-1 flex-col bg-bg">
+      <span class="glow" aria-hidden="true"></span>
+
+      <div class="flex h-10 flex-none overflow-x-auto border-b border-edge bg-chrome">
+        @for (f of files; track f.path) {
+          <a
+            [routerLink]="f.path"
+            routerLinkActive="bg-bg text-ink border-t-accent"
+            class="inline-flex items-center gap-2 whitespace-nowrap border-r border-edge border-t-2 border-t-transparent bg-chrome px-3.5 font-mono text-[12.5px] text-muted transition-colors hover:text-ink">
+            <span class="text-[11px] font-semibold text-kw">TS</span>{{ f.name }}
+            <span class="text-sm text-faint">×</span>
+          </a>
+        }
+      </div>
+
+      <div class="pane-wrap relative z-10 flex-1 overflow-auto">
+        <router-outlet />
+      </div>
+    </section>
+  </div>
+
+  <app-footer />
+</div>
