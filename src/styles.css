@@ -30,3 +30,31 @@
 html, body { height: 100%; }
 body { background: var(--color-chrome); color: var(--color-ink); font-family: var(--font-body); -webkit-font-smoothing: antialiased; }
 ::selection { background: var(--color-accent); color: #03060c; }
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-edge2) transparent;
+}
+
+*::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+*::-webkit-scrollbar-thumb {
+  background: var(--color-edge2);
+  border: 2px solid transparent;
+  background-clip: content-box;
+  border-radius: 999px;
+}
+*::-webkit-scrollbar-thumb:hover {
+  background: var(--color-faint);
+}
+*::-webkit-scrollbar-thumb:active {
+  background: var(--color-accent);
+}
+*::-webkit-scrollbar-corner {
+  background: transparent;
+}

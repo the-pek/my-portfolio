@@ -7,13 +7,15 @@ import { ContactMe } from './Pages/contact-me/contact-me';
 
 export const routes: Routes = [
   {
-    path: '', component: DefaultLayout, children: [
-      { path: '', redirectTo: 'a-propos', pathMatch: 'full' },
-      { path: 'a-propos', component: About },
+    path: '',
+    component: DefaultLayout,
+    children: [
+      { path: '', redirectTo: 'overview', pathMatch: 'full' },
       { path: 'overview', component: Overview },
+      { path: 'a-propos', component: About },
       { path: 'projects', component: Projects },
       { path: 'contact', component: ContactMe },
     ],
   },
-  { path: '**', redirectTo: 'a-propos' },
+  { path: '**', redirectTo: 'overview' },
 ];
