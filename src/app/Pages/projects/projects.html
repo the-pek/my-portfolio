@@ -1,21 +1,35 @@
 <div class="mx-auto max-w-[1040px] px-6 py-12 sm:px-10 lg:px-16 lg:py-16">
 
-  <!-- En-tête -->
-  <header class="mb-10">
+  <header class="mb-8">
     <p class="mb-3 font-mono text-[13px] text-accent2">// projets</p>
     <h1 class="font-display text-3xl font-bold tracking-tight sm:text-4xl">Réalisations</h1>
     <p class="mt-3 max-w-[58ch] text-lg text-muted">
-      Une sélection de projets et de contributions, avec les technologies mobilisées.
+      Mes projets, professionnels comme personnels et académiques, avec les technologies mobilisées.
     </p>
   </header>
 
-  <!-- Liste des projets -->
+  <!-- Sélecteur de volet -->
+  <div class="mb-6 inline-flex gap-1 rounded-lg border border-edge bg-panel p-1 font-mono text-[13px]">
+    @for (t of tabs; track t.key) {
+      <button
+        type="button"
+        (click)="select(t.key)"
+        class="rounded-md px-3.5 py-1.5 transition hover:text-ink"
+        [class.bg-panel2]="active() === t.key"
+        [class.text-accent2]="active() === t.key"
+        [class.text-muted]="active() !== t.key">
+        {{ t.label }}
+      </button>
+    }
+  </div>
+
+  <!-- Cartes pleine largeur (volet actif) -->
   <div class="flex flex-col gap-4">
-    @for (p of projects; track p.slug) {
+    @for (p of visible(); track p.slug) {
       <article class="relative overflow-hidden rounded-xl border border-edge bg-panel p-6 pl-7 transition hover:-translate-y-0.5 hover:border-edge2 hover:shadow-[0_22px_50px_-32px_rgba(77,159,255,0.5)]">
         <span class="absolute inset-y-0 left-0 w-[3px] bg-accent opacity-70"></span>
 
-        <p class="font-mono text-xs text-faint">~/projects/<span class="text-accent2">{{ p.slug }}</span></p>
+        <p class="font-mono text-xs text-faint">~/{{ p.kind }}/<span class="text-accent2">{{ p.slug }}</span></p>
         <h2 class="mt-1.5 font-display text-xl font-semibold text-ink">{{ p.title }}</h2>
         <p class="mt-1 font-mono text-xs text-accent2">{{ p.context }}</p>
         <p class="mt-3 text-muted">{{ p.description }}</p>
