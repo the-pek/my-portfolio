@@ -50,7 +50,7 @@ export class Projects {
     {
       kind: 'pro',
       slug: 'integration-api',
-      title: "Intégration & tests d'API partenaires",
+      title: "Test d'intégration des API ",
       context: 'Contexte professionnel',
       description: "Validation et documentation de services d'API partenaires.",
       points: [
@@ -65,13 +65,12 @@ export class Projects {
       slug: 'portfolio',
       title: 'Ce portfolio',
       context: 'Projet personnel',
-      description: "Portfolio sur une interface inspirée d'un éditeur de code, développé de zéro.",
+      description: "Portfolio sur une interface inspirée d'un éditeur de code",
       points: [
-        'Architecture standalone, signals et lazy loading (Angular 22)',
-        'Thème sombre maison avec Tailwind v4',
+        'Architecture standalone, signals et lazy loading ',
         'Formulaire de contact avec envoi direct (sans back-end)',
       ],
-      stacks: ['Angular', 'TypeScript', 'Tailwind CSS', 'Signals'],
+      stacks: ['Angular', 'TypeScript', 'Tailwind CSS'],
       link: { label: 'Voir le code', url: 'https://github.com/the-pek/my-portfolio' },
     },
     {
@@ -79,9 +78,10 @@ export class Projects {
       slug: 'pizziea',
       title: 'Pizziea - Optimisation de livraisons',
       context: "Projet d'études · challenge technique",
-      description: "Application Spring Boot pour un concours d'optimisation de tournées, avec interface temps réel.",
+      description:
+        "Application Java / Spring Boot pour un concours d'optimisation de tournées, avec interface temps réel.",
       points: [
-        'Conçu 4 stratégies de résolution (dont une recherche exhaustive de paires)',
+        'Conception de 4 stratégies de résolution (dont une recherche exhaustive de paires)',
         "Client d'API REST (WebClient) et UI temps réel (Thymeleaf + WebSocket)",
         'Tests unitaires JUnit / Mockito sur le solveur',
       ],
@@ -89,24 +89,44 @@ export class Projects {
       // link: { label: 'Voir le code', url: 'https://github.com/ton-compte/pizziea' },
     },
     {
-      kind: 'perso', // ← ajuste : 'pro' ou 'perso'
+      kind: 'perso',
       slug: 'festicore',
-      title: 'Festicore',
-      context: 'À compléter', // ex. "Projet d'études" / "Projet personnel"
-      description: 'À compléter — une phrase qui décrit le projet.',
-      points: ['À compléter — réalisation clé', 'À compléter — réalisation clé',
+      title: 'FestiCore',
+      context: "Projet d'études · challenge technique",
+      description:
+        'Un système complet de gestion de festivals en Java pour la gestion des billets, des passes, des activités, des réservations. Le tout en invite de commande',
+      points: [
+        'Mise en place une architecture orientée objet avec gestion des exceptions personnalisées, persistance JSON et système de logging',
+        'Réalisation des tests unitaires sur les modules de réservation et de gestion utilisateurs',
+        'Génération de billets en PDF',
       ],
-      stacks: [],
-      // link: { label: 'Voir le code', url: 'https://github.com/ton-compte/festicore' },
+      stacks: ['Java', 'JUnit'],
+      link: { label: 'Voir le code', url: 'https://github.com/the-pek/FestiCore' },
     },
     {
-      kind: 'perso', // ← ajuste : 'pro' ou 'perso'
-      slug: 'projet-dotnet', // ← renomme (ex. nom réel du projet)
-      title: 'Projet .NET', // ← titre réel
-      context: 'À compléter',
-      description: 'À compléter — une phrase qui décrit le projet.',
-      points: ['À compléter — réalisation clé', 'À compléter — réalisation clé'],
-      stacks: ['C#', '.NET'], // ← complète (ex. ASP.NET, Entity Framework, SQL Server…)
+      kind: 'perso',
+      slug: 'projet-dotnet',
+      title: 'Plateforme de cagnotte participative',
+      context: 'Projet personnel',
+      description: "Développement d'une plateforme de collecte participative",
+      points: ["Mise en place d'une architecture n-tiers C#/.NET"],
+      stacks: ['C#', '.NET'],
+      link: { label: 'Voir le code', url: 'https://github.com/the-pek/Cagnotte_DotNet_Learning' },
+    },
+    {
+      kind: 'perso',
+      slug: 'projet c',
+      title: 'BigDigitBinary',
+      context: "Projet d'études",
+      description:
+        "Ce projet implémente une bibliothèque en Langage C dédiée à la manipulation d'entiers de précision arbitraire appelés BigBinary.",
+      points: [
+        'Projet implémenté en 2 phases',
+        "Phase 1: établissement de l'infrastructure nécessaire à la manipulation des grands nombres.",
+        "Phase 2: implémenter les opérations PGCD, Modulo, Exponentiation en évitant l'uitlisation de la division euclidienne classique",
+      ],
+      stacks: ['C'],
+      link: { label: 'Voir le code', url: 'https://github.com/the-pek/BigDigitBinary' },
     },
   ];
 
