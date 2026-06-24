@@ -1,0 +1,81 @@
+<div class="mx-auto max-w-[1040px] px-6 py-12 sm:px-10 lg:px-16 lg:py-16">
+
+  <header class="mb-10">
+    <p class="mb-3 font-mono text-[13px] text-accent2">// About me</p>
+    <h1 class="font-display text-3xl font-bold tracking-tight sm:text-4xl">Parcours & compétences</h1>
+  </header>
+
+  <div class="grid gap-4 md:grid-cols-2">
+
+    <section class="overflow-hidden rounded-xl border border-edge bg-panel">
+      <div class="flex items-center gap-2.5 border-b border-edge bg-panel2 px-4 py-3">
+        <span class="font-mono text-[12.5px] text-accent2">experience.ts</span>
+      </div>
+      <div class="p-5">
+        @for (e of experiences; track e.org) {
+          <article class="entry relative border-l-2 border-edge2 pb-5 pl-6 last:pb-0">
+            <h3 class="mt-0.5 text-base font-semibold text-ink">{{ e.role }}</h3>
+            <p class="mt-0.5 text-sm text-accent2">{{ e.org }} · {{ e.place }}</p>
+            <span class="font-mono text-xs text-faint">{{ e.period }}</span>
+            <p class="mt-1.5 text-sm text-muted">{{ e.desc }}</p>
+            @if (e.stacks?.length) {
+              <div class="mt-2.5 flex flex-wrap gap-1.5">
+                @for (s of e.stacks; track s) {
+                  <span class="rounded-md border border-edge2 bg-accent/10 px-2 py-0.5 font-mono text-[11px] text-accent2">{{ s }}</span>
+                }
+              </div>
+            }
+            @if (e.Tools?.length) {
+              <div class="mt-2.5 flex flex-wrap gap-1.5">
+                @for (s of e.Tools; track s) {
+                  <span class="rounded-md border border-edge2 bg-accent/10 px-2 py-0.5 font-mono text-[11px] text-accent2">{{ s }}</span>
+                }
+              </div>
+            }
+          </article>
+        }
+      </div>
+    </section>
+
+    <section class="overflow-hidden rounded-xl border border-edge bg-panel">
+      <div class="flex items-center gap-2.5 border-b border-edge bg-panel2 px-4 py-3">
+        <span class="font-mono text-[12.5px] text-accent2">formation.ts</span>
+      </div>
+      <div class="p-5">
+        @for (f of formation; track f.org) {
+          <article class="entry relative border-l-2 border-edge2 pb-5 pl-6 last:pb-0">
+            <h3 class="mt-0.5 text-base font-semibold text-ink">{{ f.role }}</h3>
+            <p class="mt-0.5 text-sm text-accent2">{{ f.org }} · {{ f.place }}</p>
+            <span class="font-mono text-xs text-faint">{{ f.period }}</span>
+            <p class="mt-1.5 text-sm text-muted">{{ f.desc }}</p>
+            @if (f.stacks?.length) {
+              <div class="mt-2.5 flex flex-wrap gap-1.5">
+                @for (s of f.stacks; track s) {
+                  <span class="rounded-md border border-edge2 bg-accent/10 px-2 py-0.5 font-mono text-[11px] text-accent2">{{ s }}</span>
+                }
+              </div>
+            }
+          </article>
+        }
+      </div>
+    </section>
+  </div>
+
+  <section class="mt-4 overflow-hidden rounded-xl border border-edge bg-panel">
+    <div class="flex items-center gap-2.5 border-b border-edge bg-panel2 px-4 py-3">
+      <span class="font-mono text-[12.5px] text-accent2">skills.ts</span>
+    </div>
+    <div class="grid gap-x-8 gap-y-6 p-5 sm:grid-cols-2 lg:grid-cols-3">
+      @for (g of skillGroups; track g.cat) {
+        <div>
+          <p class="mb-2.5 font-mono text-[11.5px] uppercase tracking-[0.07em]">{{ g.cat }}</p>
+          <div class="flex flex-wrap gap-1.5">
+            @for (s of g.items; track s) {
+              <span class="rounded-md border border-edge2 bg-accent/10 px-2 py-0.5 font-mono text-[11px] text-accent2">{{ s }}</span>
+            }
+          </div>
+        </div>
+      }
+    </div>
+  </section>
+</div>

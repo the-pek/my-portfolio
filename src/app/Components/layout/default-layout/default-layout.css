@@ -1,0 +1,28 @@
+:host {
+  display: contents;
+}
+
+.pane-wrap {
+  background-image: radial-gradient(
+    circle,
+    color-mix(in srgb, var(--color-edge2) 55%, transparent) 1px,
+    transparent 1.2px
+  );
+  background-size: 30px 30px;
+}
+
+.glow {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 0;
+  width: 46vw;
+  height: 46vh;
+  pointer-events: none;
+  opacity: 0.5;
+  background: radial-gradient(
+    ellipse at top right,
+    color-mix(in srgb, var(--color-accent) 28%, transparent),
+    transparent 65%
+  );
+}

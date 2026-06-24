@@ -1,0 +1,18 @@
+/* Le point lumineux de la timeline. C'est un pseudo-élément, donc il vit
+   ici (impossible à faire proprement en pur utilitaire Tailwind).
+   Couleurs issues du thème (--color-* de styles.css). */
+
+.entry::before {
+  content: '';
+  position: absolute;
+  left: -6px;
+  top: 6px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--color-accent);
+  /* anneau couleur panneau pour "couper" la ligne + halo accent */
+  box-shadow:
+    0 0 0 3px var(--color-panel),
+    0 0 10px color-mix(in srgb, var(--color-accent) 50%, transparent);
+}
