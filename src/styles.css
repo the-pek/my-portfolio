@@ -59,3 +59,35 @@ body { background: var(--color-chrome); color: var(--color-ink); font-family: va
 *::-webkit-scrollbar-corner {
   background: transparent;
 }
+
+.pane-wrap {
+  view-transition-name: content;
+}
+
+
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+}
+
+::view-transition-old(content) {
+  animation: 0.24s cubic-bezier(0.4, 0, 0.2, 1) both vt-content-out;
+}
+::view-transition-new(content) {
+  animation: 0.3s cubic-bezier(0.16, 1, 0.3, 1) both vt-content-in;
+}
+@keyframes vt-content-out {
+  to { opacity: 0; transform: translateX(-16px); }
+}
+@keyframes vt-content-in {
+  from { opacity: 0; transform: translateX(22px); }
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-group(*),
+  ::view-transition-old(*),
+  ::view-transition-new(*) {
+    animation: none !important;
+  }
+}
