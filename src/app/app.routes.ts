@@ -1,9 +1,5 @@
 import { Routes } from '@angular/router';
 import { DefaultLayout } from './Components/layout/default-layout/default-layout';
-import { About } from './Pages/about/about';
-import { Overview } from './Pages/overview/overview';
-import { Projects } from './Pages/projects/projects';
-import { ContactMe } from './Pages/contact-me/contact-me';
 
 export const routes: Routes = [
   {
@@ -11,10 +7,22 @@ export const routes: Routes = [
     component: DefaultLayout,
     children: [
       { path: '', redirectTo: 'overview', pathMatch: 'full' },
-      { path: 'overview', component: Overview },
-      { path: 'a-propos', component: About },
-      { path: 'projects', component: Projects },
-      { path: 'contact', component: ContactMe },
+      {
+        path: 'overview',
+        loadComponent: () => import('./Pages/overview/overview').then((m) => m.Overview),
+      },
+      {
+        path: 'a-propos',
+        loadComponent: () => import('./Pages/about/about').then((m) => m.About),
+      },
+      {
+        path: 'projects',
+        loadComponent: () => import('./Pages/projects/projects').then((m) => m.Projects),
+      },
+      {
+        path: 'contact',
+        loadComponent: () => import('./Pages/contact-me/contact-me').then((m) => m.ContactMe),
+      },
     ],
   },
   { path: '**', redirectTo: 'overview' },

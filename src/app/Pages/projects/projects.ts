@@ -10,6 +10,7 @@ interface Project {
   description: string;
   points: string[];
   stacks: string[];
+  status?: string;
   link?: { label: string; url: string };
 }
 
@@ -19,7 +20,6 @@ interface Project {
   templateUrl: './projects.html',
 })
 export class Projects {
-  /** Volet actif (le "sous-fichier" ouvert). */
   protected readonly active = signal<Kind>('pro');
 
   protected readonly tabs = [
@@ -107,6 +107,7 @@ export class Projects {
       kind: 'perso',
       slug: 'projet-dotnet',
       title: 'Plateforme de cagnotte participative',
+      status: 'en cours',
       context: 'Projet personnel',
       description: "Développement d'une plateforme de collecte participative",
       points: ["Mise en place d'une architecture n-tiers C#/.NET"],
