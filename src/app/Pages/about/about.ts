@@ -49,7 +49,7 @@ export class About {
       org: 'ESIEA',
       place: 'Ivry-sur-Seine, France',
       desc: "Etudiant en 2ème année cycle ingénieur (4ème année université)",
-      stacks: ['Java', 'Python', 'Linux', 'C', 'Git', 'GitLab'],
+      stacks: ['Java', 'Python', 'Linux', 'C', 'Git', 'GitLab', 'OracleDB'],
     },
     {
       period: 'Septembre 2022 - Juillet 2025',
