@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, computed, signal } from '@angular/core';
 
-type Kind = 'pro' | 'perso';
+type Kind = 'pro' | 'perso' | 'academique';
 
 interface Project {
   kind: Kind;
@@ -24,7 +24,8 @@ export class Projects {
 
   protected readonly tabs = [
     { key: 'pro' as Kind, label: 'Pro' },
-    { key: 'perso' as Kind, label: 'Perso & académique' },
+    { key: 'academique' as Kind, label: 'Académique' },
+    { key: 'perso' as Kind, label: 'Perso' },
   ];
 
   protected select(k: Kind): void {
@@ -74,7 +75,7 @@ export class Projects {
       link: { label: 'Voir le code', url: 'https://github.com/the-pek/my-portfolio' },
     },
     {
-      kind: 'perso',
+      kind: 'academique',
       slug: 'pizziea',
       title: 'Pizziea - Optimisation de livraisons',
       context: "Projet d'études · challenge technique",
@@ -89,7 +90,7 @@ export class Projects {
       // link: { label: 'Voir le code', url: 'https://github.com/ton-compte/pizziea' },
     },
     {
-      kind: 'perso',
+      kind: 'academique',
       slug: 'festicore',
       title: 'FestiCore',
       context: "Projet d'études · challenge technique",
@@ -115,7 +116,7 @@ export class Projects {
       link: { label: 'Voir le code', url: 'https://github.com/the-pek/Cagnotte_DotNet_Learning' },
     },
     {
-      kind: 'perso',
+      kind: 'academique',
       slug: 'projet c',
       title: 'BigDigitBinary',
       context: "Projet d'études",
